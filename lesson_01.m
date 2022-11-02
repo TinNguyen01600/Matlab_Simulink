@@ -1,5 +1,5 @@
 clear; % clear workspace
-close all;
+close all;  % close all figures
 clc;    % clear cmd window
 
 % ----------------------------------------------------
@@ -28,21 +28,25 @@ arr2 = [1; 2; 3; 4; 5; 6];  % 6x1 column array
 arr1_t = arr1'; % transpose of arr1
 arr3 = arr1(1, 3:end);  % 3 4 5 6
 arr4 = arr1(1, 1:2:end);    % 1 3 5
+% flip arr1, arr2
+arr1f = fliplr(arr1);
+arr2f = flipud(arr2);
 
-arr5 = [1 2 3; 4 5 6; 7 8 9];
+matr = [1 2 3; 4 5 6; 7 8 9];
 
 % row 2 to 3; col 2 to 3
-arr6 = arr5(2:3, 2:3);  % 5 6; 8 9
+matr1 = matr(2:3, 2:3);  % 5 6; 8 9
 
 % row 1 to 3, step 2; col 1 to 3, step 2
-arr7 = arr5(1:2:3, 1:2:3);  % 1 3, 7 9
+matr2 = matr(1:2:3, 1:2:3);  % 1 3, 7 9
 
 index = [1 3];
 % row 1 AND 3, col 1 AND 3
-arr8 = arr5(index, index); % == arr7
+matr3 = matr(index, index); % == arr7
 
 % row 1 AND 3, all cols
-arr9 = arr5(index,:);    % 1 2 3, 7 8 9
+matr4 = matr(index,:);    % 1 2 3, 7 8 9
+
 
 % ----------------------------------------------------
 %whos;   % print info of all variables
