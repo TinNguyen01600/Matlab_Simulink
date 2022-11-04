@@ -1,4 +1,3 @@
-
 clear; close all; clc;
 % ctrl + R: comment multi lines
 a = ones(4,3);
@@ -21,8 +20,12 @@ clear; clc;
 % f = a / b;
 % m = mod(2,3);    % remainder
 % p = a ^ b;
-
-a = rand(1,5)
-b = rand(1,5)
-c = a + b
-d = a - b
+a = rand(5,5)
+b = rand(5,1)
+% c = a + b;
+% d = a - b;
+% e = a * b';
+% f = a .* b;
+c = inv(a) * b;
+d = det(a);  % determinant of a
+f = b .^ 2
