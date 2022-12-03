@@ -36,3 +36,16 @@ grid minor;
 legend('\theta = 0 deg','\theta = 15 deg','\theta = 30 deg',...
     '\theta = 45 deg','\theta = 60 deg','\theta = 75 deg',...
     'Location','southeast');
+
+%% Polar plot
+f = [20 200 2000 20000];
+figure('Position',[100 100 900 900]);
+for cnt = 1:length(f)
+    ind = find(freq == f(cnt)); 
+    subplot(2,2,cnt);
+    polarplot(theta, abs(pg(ind,:)./(omega(ind))), 'LineWidth',1.5);
+    title(num2str(f(cnt), 'Freq. = %d Hz'))
+    set(gca, 'Fontsize', 12);
+    set(gca, 'FontWeight', 'Bold');
+end
+rlim([0 3.5e-3]);
